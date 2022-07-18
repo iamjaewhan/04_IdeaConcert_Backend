@@ -1,0 +1,13 @@
+[Unit]
+Description=gunicorn deamo
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/Users/wantid_3rd/04_IdeaConcert_Backend
+ExecStart=.conda/envs/04_IdeaConcert_Backend/bin/gunicorn --workers3 IdeaConcert.wsgi.application --bind 0.0.0.0:8000
+
+[Install]
+WanteBy=multi-user.target
+
